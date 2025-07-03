@@ -107,7 +107,7 @@ def algorithm2(fi, C, di, S, split_val, Jjmi_pre, e):
     Jjmi_ori = mutual_information(fi_discretized, C['class'].T)
     for i in range(0, len(S)):
         Jjmi_ori = Jjmi_ori + (CMI(fi_discretized, S[i], C['class'].T) - mutual_information(fi_discretized, S[i])) / len(S)
-    if Jjmi_ori > (Jjmi_pre - e / len(S)):
+    if Jjmi_ori > Jjmi_pre:
         check = 1
     print(Jjmi_ori, Jjmi)
 
